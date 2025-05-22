@@ -2,6 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   FaGithub,
   FaInfoCircle,
@@ -28,8 +29,11 @@ const FeaturedProjectSection = () => {
     githubUrl: "https://github.com/heeran-kim/ai-marketer-v2",
     liveUrl: "https://ai-marketer-v2.vercel.app/",
     features: "#features",
-    videoId: "todo",
+    videoId: null,
+    thumbnailImage: "/project-thumbnail.png",
   };
+
+  const hasVideo = projectDetails.videoId && projectDetails.videoId !== "";
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -64,14 +68,36 @@ const FeaturedProjectSection = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="relative h-[400px] w-full overflow-hidden rounded-t-xl">
-            <iframe
-              className="absolute top-0 left-0 w-full h-full"
-              src={`https://www.youtube.com/embed/${projectDetails.videoId}`}
-              title="Professional Showcase Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            {hasVideo ? (
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src={`https://www.youtube.com/embed/${projectDetails.videoId}`}
+                title="Professional Showcase Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <div className="relative w-full h-full">
+                <Image
+                  src={projectDetails.thumbnailImage}
+                  alt="AI Marketer Platform Showcase"
+                  fill
+                  className="object-cover"
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                />
+
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                  <h1 className="text-3xl font-bold text-white mb-2">
+                    {projectDetails.title}
+                  </h1>
+                  <p className="text-white/90 text-sm">
+                    Professional Industry Placement Project
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="p-6">

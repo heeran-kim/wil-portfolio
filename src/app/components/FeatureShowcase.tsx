@@ -70,7 +70,7 @@ const FeatureShowcase = () => {
       description:
         "Smart caption generation using ChatGPT API, tailored for business context and marketing goals.",
       icon: <RiAiGenerate className="text-4xl text-orange-500" />,
-      youtubeId: "feature4-youtube-id",
+      youtubeId: "BR3t9GN9nSw",
       technologies: ["ChatGPT API", "React", "Prompt Engineering"],
       details: [
         "Context-aware caption generation using business information",

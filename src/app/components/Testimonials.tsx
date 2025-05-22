@@ -10,6 +10,21 @@ const Testimonials = () => {
 
   const testimonials = [
     {
+      id: "charles",
+      name: "Charles Lee",
+      role: "Director at AKA Studio",
+      image: "/testimonials/charles.jpg",
+      quote:
+        "We are really appreciated for all your excellent work you have put into our project so far, especially to see you grow during the internship both on your technical and leadership skill very well. The local setup guide and your plan to fix the deployment issue show how proactive you are. Also, I am happy to give you feedback to help with your reflection on our placement assessment.",
+    },
+    {
+      id: "lavinia",
+      name: "Lavinia Adams",
+      role: "Director at AKA Studio",
+      image: "/testimonials/lavinia.jpg",
+      quote: "Placement holder for testimonial",
+    },
+    {
       id: "drishti",
       name: "Drishti Madaan",
       role: "Intern",
@@ -21,20 +36,6 @@ const Testimonials = () => {
       name: "Daniel Spresian",
       role: "Intern",
       image: "/testimonials/daniel.jpg",
-      quote: "Placement holder for testimonial",
-    },
-    {
-      id: "charles",
-      name: "Charles Lee",
-      role: "Director at AKA Studio",
-      image: "/testimonials/charles.jpg",
-      quote: "Placement holder for testimonial",
-    },
-    {
-      id: "lavinia",
-      name: "Lavinia Adams",
-      role: "Director at AKA Studio",
-      image: "/testimonials/lavinia.jpg",
       quote: "Placement holder for testimonial",
     },
   ];
