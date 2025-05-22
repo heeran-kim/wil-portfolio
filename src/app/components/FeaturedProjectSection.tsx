@@ -29,7 +29,7 @@ const FeaturedProjectSection = () => {
     githubUrl: "https://github.com/heeran-kim/ai-marketer-v2",
     liveUrl: "https://ai-marketer-v2.vercel.app/",
     features: "#features",
-    videoId: null,
+    videoId: "K_X_rJNFZRU",
     thumbnailImage: "/project-thumbnail.png",
   };
 
